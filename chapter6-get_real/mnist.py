@@ -21,10 +21,10 @@ def prepend_bias(X):
 
 
 # 60000 images, each 785 elements (1 bias + 28 * 28 pixels)
-X_train = prepend_bias(load_images("../programming-machine-learning/data/mnist/train-images-idx3-ubyte.gz"))
+X_train = prepend_bias(load_images("../mnist/train-images-idx3-ubyte.gz"))
 
 # 10000 images, each 785 elements, with the same structure as X_train
-X_test = prepend_bias(load_images("../programming-machine-learning/data/mnist/t10k-images-idx3-ubyte.gz"))
+X_test = prepend_bias(load_images("../mnist/t10k-images-idx3-ubyte.gz"))
 
 
 def load_labels(filename):
@@ -45,8 +45,8 @@ def encode_digit(Y, digit):
             encoded_Y[i][0] = 1
     return encoded_Y
 
-TRAINING_LABELS = load_labels("../programming-machine-learning/data/mnist/train-labels-idx1-ubyte.gz")
-TEST_LABELS = load_labels("../programming-machine-learning/data/mnist/t10k-labels-idx1-ubyte.gz")
+TRAINING_LABELS = load_labels("../mnist/train-labels-idx1-ubyte.gz")
+TEST_LABELS = load_labels("../mnist/t10k-labels-idx1-ubyte.gz")
 
 # Load a list of 10 training sets and a matching list of 10 testing sets, each
 # encoding one digit.
